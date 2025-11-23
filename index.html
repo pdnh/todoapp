@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>To-Do Liste</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>📝 To-Do Liste</h1>
+
+  <div class="wrapper">
+    <!-- Aufgaben Panel -->
+    <div class="panel">
+      <h2>🎯 Aufgaben</h2>
+      <form id="todoForm">
+        <input type="text" id="taskTitle" placeholder="Aufgabentitel" required>
+        <textarea id="taskDesc" placeholder="Beschreibung"></textarea>
+        <select id="taskPriority">
+          <option value="Hoch">🔴 Hoch</option>
+          <option value="Mittel" selected>🟡 Mittel</option>
+          <option value="Niedrig">🟢 Niedrig</option>
+        </select>
+        <select id="taskCategory">
+          <option value="">📂 Kategorie auswählen </option>
+        </select>
+        <button type="submit" class="btn-primary">➕ Aufgabe hinzufügen</button>
+      </form>
+        <!-- Filter Section -->
+        <div class="filter-section">
+          <input type="text" id="titleFilter" placeholder="🔍 Nach Titel suchen" class="filter-input">
+          <select id="priorityFilter" class="filter-input">
+            <option value="">🎯 Alle Prioritäten</option>
+            <option value="Hoch">🔴 Hoch</option>
+            <option value="Mittel">🟡 Mittel</option>
+            <option value="Niedrig">🟢 Niedrig</option>
+          </select>
+          <select id="categoryFilter" class="filter-input">
+            <option value="">📂 Alle Kategorien</option>
+          </select>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+
+    <!-- Kategorien Panel -->
+    <div class="panel">
+      <h2>📂 Kategorien</h2>
+      <form id="categoryForm">
+        <input type="text" id="categoryName" placeholder="Kategoriename" required>
+        <button type="submit" class="btn-success">📁 Kategorie anlegen</button>
+      </form>
+      <ul id="categoryList"></ul>
+    </div>
+  </div>
+
+  <!-- Custom Modal -->
+  <div id="confirmModal" class="modal">
+    <div class="modal-content">
+      <h3 id="modalTitle">Löschen bestätigen</h3>
+      <p id="modalMessage">Möchtest du dieses Element wirklich löschen?</p>
+      <div class="modal-actions">
+        <button id="modalConfirm" class="btn-danger">Ja, löschen</button>
+        <button id="modalCancel" class="btn-primary">Abbrechen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
